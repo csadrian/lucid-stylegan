@@ -1,4 +1,4 @@
-import "jquery-ui-bundle/jquery-ui";
+import 'jquery-ui-bundle/jquery-ui';
 
 const animals = document.getElementById('animals');
 const celeba = document.getElementById('celeba');
@@ -17,7 +17,7 @@ export default function lucidFunction() {
   console.log(layersSelector);
   const layersDiv = document.getElementById('layers');
 
-  selectLayer(0);
+  selectLayer(45);
 
   layers.forEach((i, n) => {
     var layerLink = document.createElement('a');
@@ -33,16 +33,15 @@ export default function lucidFunction() {
     };
   });
 
-
   $(layersSelectorSlider).slider({
-      step: 1,
-      range: false,
-      min: 1,
-      max: layers.length,
-      slide: function( event, ui ) {
-        selectLayer(ui.value);
-      }
-    });
+    step: 1,
+    range: false,
+    min: 1,
+    max: layers.length,
+    slide: function(event, ui) {
+      selectLayer(ui.value);
+    },
+  });
 }
 
 function selectType(e) {
