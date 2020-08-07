@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <meta property='og:description' content="Feature Visualization with Generative Prior" />
-  <title>Feature Visualization with Generative Prior</title>
+  <meta property='og:description' content="Visualizing Transfer Learning" />
+  <title>Visualizing Transfer Learning</title>
   <link rel="preload" as="font" href="../public/fonts/hkgroteskbold.woff" type="font/woff" crossorigin="anonymous">
   <link rel="preload" as="font" href="../public/fonts/hkgrotesklight.woff" type="font/woff" crossorigin="anonymous">
   <link rel="preload" as="font" href="../public/fonts/hkgroteskregular.woff" type="font/woff" crossorigin="anonymous">
@@ -15,10 +15,10 @@
 </head>
 <body>
   <header>
+    <h1 class="navbar-brand hidden">
+      Visualizing Transfer Learning
+    </h1>
     <nav class="navbar navbar-expand-md navbar-light fixed-top">
-      <a class="navbar-brand  hidden">
-        Feature Visualization with Generative Prior
-      </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -26,13 +26,13 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link " href="./index.html">Faces</a>
+            <a class="nav-link " href="./index.html"><span class="glyphicon glyphicon-file" aria-hidden="true"></span> Feature Visualization with a Generative Prior (and Lucid)</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="./lucid.html">Lucid</a>
+            <a class="nav-link active" href="./lucid.html"><span class="glyphicon glyphicon-file" aria-hidden="true"></span> Feature Visualization with Lucid</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./about.html">About</a>
+            <a class="nav-link" href="http://whi2020.online/static/pdfs/paper_87.pdf">Paper</a>
           </li>
         </ul>
       </div>
@@ -45,19 +45,22 @@
       <div class="container-fluid mt-5">
 
         <div class="row mt-5" id="content">
-          <div class="col-12 mx-auto text-center" id="lucidContent">
-            <br><br>
-            Type
-            <br>
-            <div class="btn-group" role="group" aria-label="Basic example">
-              <button id="animals" type="button" class="btn btn-primary active">Animals</button>
-              <button id="celeba" type="button" class="btn btn-primary">Celeba</button>
+          <div class="col-md-3 offset-md-3 col-xs-12 text-center" id="lucidContent-a">
+            <br /><br />
+            <div> 
+              Transfer to dataset:
+            </div>
+            <div class="btn-group pull-left" role="group" aria-label="Basic example">
+              <button id="celeba" type="button" class="btn btn-primary active">Celeba</button>
+              <button id="animals" type="button" class="btn btn-primary">Animals</button>
               <button id="flowers" type="button" class="btn btn-primary">Flowers</button>
             </div>
-            <br>
-            <br>
-            Layer:
-            <br>
+          </div>
+          <div class="col-md-3 col-xs-12 text-center" id="lucidContent-b">
+            <br /><br />
+            <div> 
+              Layer:
+            </div>
             <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="layersSelector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Dropdown button
@@ -65,6 +68,18 @@
               <div class="dropdown-menu  mt-5" aria-labelledby="dropdownMenuButton" id="layers">
               </div>
             </div>
+            You can also use a slider to choose layer:
+            <br>
+            <div style="max-width: 300px; margin: auto">
+              <div id="layersSelectorSlider" ></div>
+            </div>
+            <br>
+          </div>
+          <div class="col-md-3 hidden-xs"></div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-12 mx-auto text-center">
+            <h2 class="text-center"><strong>Post-transfer / Pre-transfer</strong></h2>
           </div>
         </div>
         <div id="lucidImages" class="row">

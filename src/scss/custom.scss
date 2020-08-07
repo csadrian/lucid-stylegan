@@ -1,4 +1,5 @@
 @import './style.css';
+@import './jquery-ui.min.css';
 
 $base-color: #033039;
 $primary-color: #033039;
@@ -42,6 +43,10 @@ a {
   background-color: white;
 }
 
+.navbar-brand {
+  display: block;
+  text-align: center;
+}
 
 .face {
   position: relative;

@@ -1,9 +1,12 @@
+import "jquery-ui-bundle/jquery-ui";
+
 const animals = document.getElementById('animals');
 const celeba = document.getElementById('celeba');
 const flowers = document.getElementById('flowers');
 const layersSelector = document.getElementById('layersSelector');
+const layersSelectorSlider = document.getElementById('layersSelectorSlider');
 
-var selectedType = 'animals';
+var selectedType = 'celeba';
 var selectedLayer = '';
 
 export default function lucidFunction() {
@@ -29,6 +32,17 @@ export default function lucidFunction() {
       console.log(e.target);
     };
   });
+
+
+  $(layersSelectorSlider).slider({
+      step: 1,
+      range: false,
+      min: 1,
+      max: layers.length,
+      slide: function( event, ui ) {
+        selectLayer(ui.value);
+      }
+    });
 }
 
 function selectType(e) {
@@ -53,7 +67,7 @@ function loadImages() {
   document.getElementById('lucidImages').innerHTML = '';
   for (var i = 0; i < selectedLayer.size; i++) {
     var link =
-      'https://users.renyi.hu/~daniel/tmp/lucid/catalogs/' +
+      'http://35.158.68.186/lucid/catalogs/' +
       selectedType +
       '_' +
       selectedLayer.layer +
