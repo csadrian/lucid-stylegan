@@ -17,8 +17,6 @@ export default function lucidFunction() {
   console.log(layersSelector);
   const layersDiv = document.getElementById('layers');
 
-  selectLayer(45);
-
   layers.forEach((i, n) => {
     var layerLink = document.createElement('a');
     layerLink.className = 'dropdown-item';
@@ -42,6 +40,8 @@ export default function lucidFunction() {
       selectLayer(ui.value);
     },
   });
+
+  selectLayer(45);
 }
 
 function selectType(e) {
@@ -59,6 +59,7 @@ function selectType(e) {
 function selectLayer(target) {
   layersSelector.innerHTML = layers[target].layer.split('/')[1];
   selectedLayer = layers[target];
+  $(layersSelectorSlider).slider('option', 'value', target);
   loadImages();
 }
 
