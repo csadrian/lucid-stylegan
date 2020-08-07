@@ -81,10 +81,10 @@ function loadImages() {
 
 function loadImage(link, i) {
   var img = new Image();
-  img.src = link + '_googlenet_finetuned.pb.png';
+  img.src = link + '_googlenet_default.pb.png';
 
   var img2 = new Image();
-  img2.src = link + '_googlenet_default.pb.png';
+  img2.src = link + '_googlenet_finetuned.pb.png';
 
   var containers = document.createElement('div');
   containers.className = 'neuron mt-5 col-lg-4 col-md-6 col-sm-12';

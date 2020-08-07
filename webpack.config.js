@@ -36,10 +36,11 @@ const config = {
           },
           'css-loader',
           'sass-loader',
+          'resolve-url-loader',
         ],
       },
       {
-        test: /\.(woff|otf|gif|png|jpe?g|svg)$/i,
+        test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
           {
             loader: 'url-loader',
@@ -48,6 +49,19 @@ const config = {
               name: '[name].[ext]',
               fallback: 'file-loader',
               outputPath: 'public/images',
+            },
+          },
+        ],
+      },
+      {
+        test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'public/fonts', // where the fonts will go
+              publicPath: 'public/fonts', // override the default path
             },
           },
         ],

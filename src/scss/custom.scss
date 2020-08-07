@@ -85,6 +85,38 @@ a {
   z-index: 2;
 }
 
+.toc-col {
+  padding-bottom: 2em;
+  border-bottom: 1px solid #ccc;
+  margin-top: -2em;   
+}
+
+.toc a, .toc a:hover {
+  text-decoration: none;
+}
+
+.toc a.active {
+  color: #007bff;
+}
+
+.toc-header {
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.7em;
+  margin-bottom: 0em;
+  margin-top: -1em;
+}
+
+.title {
+  font-family: "HKGrotesk", Arial;
+  font-weight: bold;
+}
+
+.title h1 {
+  margin-top: -0.1em;
+}
+
 /* Small devices (landscape phones, 576px and up) */
 @include media-breakpoint-down(sm) {
 }
