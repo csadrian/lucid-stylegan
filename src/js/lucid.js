@@ -8,6 +8,7 @@ const layersSelectorSlider = document.getElementById('layersSelectorSlider');
 
 var selectedType = 'celeba';
 var selectedLayer = '';
+var selectedLayerIdx = null;
 
 export default function lucidFunction() {
   animals.onclick = selectType;
@@ -26,7 +27,7 @@ export default function lucidFunction() {
     layersDiv.appendChild(layerLink);
 
     layersDiv.onclick = function(e) {
-      selectLayer(e.target.id);
+      selectLayerInstant(e.target.id);
       console.log(e.target);
     };
   });
@@ -37,11 +38,11 @@ export default function lucidFunction() {
     min: 1,
     max: layers.length,
     slide: function(event, ui) {
-      selectLayer(ui.value);
+      selectLayerDeferLoadImages(ui.value);
     },
   });
 
-  selectLayer(45);
+  selectLayerInstant(45);
 }
 
 function selectType(e) {
@@ -56,11 +57,25 @@ function selectType(e) {
   loadImages();
 }
 
-function selectLayer(target) {
+function selectLayerInner(target) {
   layersSelector.innerHTML = layers[target].layer.split('/')[1];
-  selectedLayer = layers[target];
   $(layersSelectorSlider).slider('option', 'value', target);
+  selectedLayer = layers[target];
+  selectedLayerIdx = target;
+}
+
+function selectLayerInstant(target) {
+  selectLayerInner(target);
   loadImages();
+}
+
+function selectLayerDeferLoadImages(target) {
+  selectLayerInner(target);
+  setTimeout(function() {
+    if (selectedLayerIdx == target) {
+      loadImages();
+    }
+  }, 500);
 }
 
 function loadImages() {
