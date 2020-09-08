@@ -35,6 +35,30 @@ h6 {
   color: $base-color;
 }
 
+.authors {
+  color: #aaa;
+  font-size: 0.8em;
+  font-weight: normal;
+  text-transform: uppercase;
+
+}
+
+
+.info {
+  color: #666;
+  font-size: 0.8em;
+  font-weight: normal;
+}
+
+.info span {
+  color: black;
+}
+
+.title h5 {
+  text-transform: uppercase;
+  font-size: 0.9em
+}
+
 a {
   color: $base-color;
 }
@@ -86,7 +110,7 @@ a {
 }
 
 .toc-col {
-  padding-bottom: 2em;
+  padding-bottom: 1em;
   border-bottom: 1px solid #ccc;
   margin-top: -2em;   
 }
