@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -13,42 +14,49 @@
 
   <base href="{{ site.baseurl }}">
 </head>
+
 <body>
-  <header>
+  <nav class="navbar navbar-expand-sm fixed-top  navbar-light bg-light pl-5 pr-5">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <section class="title mt-5">
-      <div class="row mt-5">
-        <div class="offset-md-4 col-md-8">
-          <h1>Visualizing Transfer Learning</h1>
-          <h5>Project site</h5>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" target="_blank" href="#"><span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" target="_blank" href="http://whi2020.online/static/pdfs/paper_87.pdf"><i class="far fa-file-pdf"></i>
+            Paper</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" target="_blank" href="https://www.youtube.com/watch?v=RxHFvTxi1s4"><i class="fas fa-video"></i> Video</a>
+        </li>
+      </ul>
+      <p class="info pt-3 text-right">
+        <span>Paper authors:</span> Róbert Szabó, Dániel Katona, Márton Csillag, Adrián Csiszárik, Dániel
+        Varga<br />
+        <span>Presented at the</span> 2020 Workshop on Human Interpretability in Machine Learning <a
+          href="http://whi2020.online/">http://whi2020.online</a>
+      </p>
+      
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="row mt-5">
+      <div class="col-12 mt-5 text-center">
+        <br>        
+        <h5 class="font-weight-bold"> Feature Visualization with </h5>
+        <div class="btn-group mb-5" role="group" aria-label="Basic example">
+          <a href="/" class="btn btn-light active "> Generative Prior </a>
+          <a href="/lucid.html" class="btn btn-primary"> Lucid </a>
         </div>
       </div>
-    </section>
-
-    <section class="toc mt-5">
-      <div class="row mt-5">
-        <div class="offset-md-4 col-md-5 toc-col">
-          <div>
-            <a href="./index.html"><i class="far fa-file"></i> Feature Visualization with a Generative Prior (and Lucid)</a>
-          </div>
-          <div>
-            <a class="active" href="./lucid.html"><i class="far fa-file"></i> Feature Visualization with Lucid</a>
-          </div>
-          <div>
-            <a href="http://whi2020.online/static/pdfs/paper_87.pdf"><i class="far fa-file-pdf"></i> Paper</a>
-            <a class="pl-2" href="https://www.youtube.com/watch?v=RxHFvTxi1s4"><i class="fas fa-video"></i> Video</a>
-          </div>
-          <div class="info pt-4">
-            <p>
-              <span>Paper authors:</span> Róbert Szabó, Dániel Katona, Márton Csillag, Adrián Csiszárik, Dániel Varga<br />
-              <span>Venues:</span> &bull; 2020 Workshop on Human Interpretability in Machine Learning <a href="http://whi2020.online/">http://whi2020.online</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </header>
+    </div>
+  </div>
 
   <main role="main" class="content">
 
@@ -57,21 +65,22 @@
 
         <div class="row mt-5" id="content">
           <div class="col-md-3 offset-md-3 col-xs-12 text-center" id="lucidContent-a">
-            <div> 
+            <div>
               Transfer to dataset:
             </div>
             <div class="btn-group pull-left" role="group" aria-label="Basic example">
-              <button id="celeba" type="button" class="btn btn-primary active">Celeba</button>
-              <button id="animals" type="button" class="btn btn-primary">Animals</button>
-              <button id="flowers" type="button" class="btn btn-primary">Flowers</button>
+              <button id="celeba" type="button" class="btn btn-secondary active">Celeba</button>
+              <button id="animals" type="button" class="btn btn-secondary">Animals</button>
+              <button id="flowers" type="button" class="btn btn-secondary">Flowers</button>
             </div>
           </div>
           <div class="col-md-3 col-xs-12 text-center" id="lucidContent-b">
-            <div> 
+            <div>
               Layer:
             </div>
             <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="layersSelector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="layersSelector" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
                 Dropdown button
               </button>
               <div class="dropdown-menu  mt-5" aria-labelledby="dropdownMenuButton" id="layers">
@@ -80,15 +89,15 @@
             You can also use a slider to choose layer:
             <br>
             <div style="max-width: 300px; margin: auto">
-              <div id="layersSelectorSlider" ></div>
+              <div id="layersSelectorSlider"></div>
             </div>
             <br>
           </div>
           <div class="col-md-3 hidden-xs"></div>
         </div>
-        <div class="row mt-5">
+        <div class="row mt-2">
           <div class="col-12 mx-auto text-center">
-            <h4 class="text-center">Pre-transfer / Post-transfer</h4>
+            <h5 class="font-weight-bold text-center">Pre-transfer / Post-transfer</h5>
           </div>
         </div>
         <div id="lucidImages" class="row">

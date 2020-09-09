@@ -11,7 +11,7 @@ export default function facesFunction() {
     lucidImages[i].src = 'public/images/lucid/' + i + '.jpg';
 
     containers[i] = document.createElement('div');
-    containers[i].className = 'neuron mt-5 col-lg-4 col-md-6 col-sm-12';
+    containers[i].className = 'neuron mt-2 col-lg-4 col-md-6 col-sm-12';
     containers[i].id = i;
 
     imageContainers[i] = document.createElement('div');

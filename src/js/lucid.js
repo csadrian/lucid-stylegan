@@ -103,7 +103,7 @@ function loadImage(link, i) {
   img2.src = link + '_googlenet_finetuned.pb.png';
 
   var containers = document.createElement('div');
-  containers.className = 'neuron mt-5 col-lg-4 col-md-6 col-sm-12';
+  containers.className = 'neuron mt-2 col-lg-4 col-md-6 col-sm-12';
 
   var imageContainers = document.createElement('div');
   imageContainers.className = 'face';
