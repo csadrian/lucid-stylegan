@@ -82,7 +82,7 @@ function loadImages() {
   document.getElementById('lucidImages').innerHTML = '';
   for (var i = 0; i < selectedLayer.size; i++) {
     var link =
-      'http://35.158.68.186/lucid/catalogs/' +
+      'lucid/catalogs/' +
       selectedType +
       '_' +
       selectedLayer.layer +
